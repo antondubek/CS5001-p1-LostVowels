@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/LostVowels.iml" filepath="$PROJECT_DIR$/LostVowels.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CS5001-p1-LostVowels.iml" filepath="$PROJECT_DIR$/CS5001-p1-LostVowels.iml" />
     </modules>
   </component>
 </project>

@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 /**
- * A class which, when passed a phrase and a dictionary of words, will generate the "lost consonants" versions of the
- * sentence. The definition of Lost Consonants can be seen on Wikipedia: https://en.wikipedia.org/wiki/Lost_Consonants
+ * A class which, when passed a phrase and a dictionary of words, will generate the "lost vowels" versions of the
+ * sentence. Lost Vowels is an alteration to Lost Consonants which can be seen on Wikipedia: https://en.wikipedia.org/wiki/Lost_Consonants
  *
  * @author CS5001 Student (acm35@st-andrews.ac.uk)
  *
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class LostVowels {
 
     /**
-     * Prints the lost consonants of a word or phrase compared against a passed dictionary.
+     * Prints the lost vowels of a word or phrase compared against a passed dictionary.
      * @param args A file location of the dictionary, followed by a word or "phrase"
      *
      */
@@ -122,9 +122,9 @@ public class LostVowels {
     }
 
     /**
-     * Checks whether a letter is a consonant.
+     * Checks whether a letter is a vowel.
      * @param letter Char containing a letter to be checked
-     * @return Returns True (Letter is a consonant) or False (Letter is not)
+     * @return Returns True (Letter is a Vowel) or False (Letter is not)
      */
     public static boolean isLetterVowel(char letter) {
         switch (Character.toLowerCase(letter)) {
