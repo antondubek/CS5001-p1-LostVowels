@@ -30,6 +30,9 @@ public class LostVowels {
         // Creation of dictionary Arraylist from source file
         ArrayList<String> lines = FileUtil.readLines(args[0]);
 
+        //Make the whole of the dictionary lowercase so that words can be tested lowercase
+        ArrayList<String> dictionary = parseDictionary(lines);
+
         // Check if the dictionary is empty, if so, warn and exit
         if (lines.size() == 0) {
             System.out.println("Invalid dictionary, aborting.");
@@ -39,8 +42,6 @@ public class LostVowels {
         // Save the inputted string
         String input = args[1];
 
-        //Make the whole of the dictionary lowercase so that words can be tested lowercase
-        ArrayList<String> dictionary = parseDictionary(lines);
 
         int numOfAlternativesFound = 0;
 
