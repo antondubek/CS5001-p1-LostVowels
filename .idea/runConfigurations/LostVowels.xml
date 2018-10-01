@@ -4,7 +4,7 @@
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <option name="MAIN_CLASS_NAME" value="LostVowels" />
     <module name="CS5001-p1-LostVowels" />
-    <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/../CS5001-p1-lostconsonants/words&quot; &quot;Once upon a time in a kingdom far far away&quot;" />
+    <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/../CS5001-p1-lostconsonants/words&quot; &quot;The alarm tried to give a good warning&quot;" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <method />
   </configuration>
