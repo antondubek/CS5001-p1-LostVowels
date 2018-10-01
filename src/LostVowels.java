@@ -156,7 +156,7 @@ public class LostVowels {
 
             //Check if the last character is a '.' ',' '/' '?' '!', if so remove punctuation
             if (".,/?!".indexOf(lastCharacter) != -1) {
-                words[x] = words[x].replaceAll("[^\\w]", ""); // remove punctuation
+                words[x] = words[x].replaceAll("\\p{Punct}", ""); // remove punctuation
             }
 
             //If the word is in the dictionary, increment the helper counter
