@@ -55,8 +55,13 @@ public class LostVowels {
             // Check if the character is a vowel
             if (isLetterVowel(letter)) {
 
-                //take letter out
-                sb.deleteCharAt(i);
+                // Checks if letter is an 'a' on its own, if so removes it and whitespace either side
+                if(input.substring(i-1, i+2).equals(" a ")){
+                    sb.delete(i-1,i+1);
+                } else {
+                    //take letter out
+                    sb.deleteCharAt(i);
+                }
 
                 // Write the new string without the letter
                 String newInput = sb.toString();
@@ -81,6 +86,21 @@ public class LostVowels {
     }
 
     /**
+     * Takes the dictionary array lines and makes it all lowercase.
+     * @param lines Arraylist containing words of a dictionary
+     * @return Returns the dictionary with all words lowercase
+     */
+    public static ArrayList<String> parseDictionary(ArrayList<String> lines) {
+
+        for (int j = 0; j < lines.size(); j++) {
+            String oldItem = lines.get(j);
+            lines.set(j, oldItem.toLowerCase());
+        }
+
+        return lines;
+    }
+
+    /**
      * Checks whether a letter is a vowel.
      * @param letter Char containing a letter to be checked
      * @return Returns True (Letter is a Vowel) or False (Letter is not)
@@ -100,21 +120,6 @@ public class LostVowels {
             default:
                 return false;
         }
-    }
-
-    /**
-     * Takes the dictionary array lines and makes it all lowercase.
-     * @param lines Arraylist containing words of a dictionary
-     * @return Returns the dictionary with all words lowercase
-     */
-    public static ArrayList<String> parseDictionary(ArrayList<String> lines) {
-
-        for (int j = 0; j < lines.size(); j++) {
-            String oldItem = lines.get(j);
-            lines.set(j, oldItem.toLowerCase());
-        }
-
-        return lines;
     }
 
     /**
