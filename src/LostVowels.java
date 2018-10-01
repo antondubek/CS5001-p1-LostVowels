@@ -47,24 +47,14 @@ public class LostVowels {
         // Iterate through each character of the input string
         for (int i = 0; i < input.length(); i++) {
 
-            StringBuilder sb = new StringBuilder(input);
-
             // Get the character at index i
             char letter = input.charAt(i);
 
             // Check if the character is a vowel
             if (isLetterVowel(letter)) {
 
-                // Checks if letter is an 'a' on its own, if so removes it and whitespace either side
-                if(input.substring(i-1, i+2).equals(" a ")){
-                    sb.delete(i-1,i+1);
-                } else {
-                    //take letter out
-                    sb.deleteCharAt(i);
-                }
-
-                // Write the new string without the letter
-                String newInput = sb.toString();
+                // Parse words
+                String newInput = wordParser(i, input);
 
                 // Split the words
                 String[] words = newInput.split(" ");
@@ -120,6 +110,30 @@ public class LostVowels {
             default:
                 return false;
         }
+    }
+
+    /**
+     * Given the input phrase and the index of next vowel, the method checks whether the vowel at that index
+     * is just the letter 'a' with whitespace either side. If so the whitespace and a are removed, if not, only the
+     * vowel at that index is removed. The input is then returned as a string.
+     * @param i Integer number signifying the index of next vowel with regards to the input string.
+     * @param input Phrase or word as a string to take a vowel out of
+     * @return A string containing the input word or phrase minus the vowel
+     */
+    public static String wordParser(int i, String input){
+
+        StringBuilder sb = new StringBuilder(input);
+
+        // Checks if letter is an 'a' on its own, if so removes it and whitespace either side
+        if(input.substring(i-1, i+2).equals(" a ")){
+            sb.delete( i-1, i+1);
+        } else {
+            //take letter out
+            sb.deleteCharAt(i);
+        }
+
+        // Return the new string without the letter
+        return sb.toString();
     }
 
     /**
