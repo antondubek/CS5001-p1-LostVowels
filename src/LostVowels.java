@@ -121,13 +121,17 @@ public class LostVowels {
      * @param input Phrase or word as a string to take a vowel out of
      * @return A string containing the input word or phrase minus the vowel
      */
-    public static String wordParser(int i, String input){
+    public static String wordParser(int i, String input) {
 
         StringBuilder sb = new StringBuilder(input);
 
         // Checks if letter is an 'a' on its own, if so removes it and whitespace either side
-        if(input.substring(i-1, i+2).equals(" a ")){
-            sb.delete( i-1, i+1);
+        if (input.charAt(i) == 'A' && input.charAt(i+1) == ' ') {
+            sb.delete( i, i+2);
+        }
+        //else if (input.charAt(i) == 'a' && input.charAt(i+1) == ' ' && input.charAt(i-1) == ' ') {
+        else if (input.contains(" a ") && input.indexOf(" a ") == i-1){
+            sb.delete(i-1, i+1);
         } else {
             //take letter out
             sb.deleteCharAt(i);
@@ -150,6 +154,8 @@ public class LostVowels {
 
         // Iterate through all the words in the array
         for (int x = 0; x < words.length; x++) {
+
+            //System.out.println(words[x]);
 
             //Get the last character of word
             char lastCharacter = words[x].charAt(words[x].length() - 1);
