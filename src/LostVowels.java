@@ -126,12 +126,12 @@ public class LostVowels {
         StringBuilder sb = new StringBuilder(input);
 
         // Checks if letter is an 'a' on its own, if so removes it and whitespace either side
-        if (input.charAt(i) == 'A' && input.charAt(i+1) == ' ') {
-            sb.delete( i, i+2);
+        if (input.charAt(i) == 'A' && input.charAt(i + 1) == ' ') {
+            sb.delete(i, i + 2);
         }
         //else if (input.charAt(i) == 'a' && input.charAt(i+1) == ' ' && input.charAt(i-1) == ' ') {
-        else if (input.contains(" a ") && input.indexOf(" a ") == i-1){
-            sb.delete(i-1, i+1);
+        else if (input.contains(" a ") && input.indexOf(" a ") == i - 1) {
+            sb.delete(i - 1, i + 1);
         } else {
             //take letter out
             sb.deleteCharAt(i);
@@ -175,4 +175,3 @@ public class LostVowels {
         return counter == words.length;
     }
 }
-
